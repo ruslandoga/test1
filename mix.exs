@@ -39,7 +39,12 @@ defmodule T.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:fdb, "~> 6.2.7-0"},
+      {:ex_aws, "~> 2.1"},
+      {:ex_aws_s3, "~> 2.1"},
+      {:hackney, "~> 1.16"},
+      {:mox, "~> 1.0", only: :test}
     ]
   end
 
