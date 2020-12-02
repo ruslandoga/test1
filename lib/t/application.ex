@@ -17,6 +17,8 @@ defmodule T.Application do
       # {T.Worker, arg}
     ]
 
+    :ok = T.setup_db()
+
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: T.Supervisor]

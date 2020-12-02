@@ -44,7 +44,8 @@ defmodule T.MixProject do
       {:ex_aws, "~> 2.1"},
       {:ex_aws_s3, "~> 2.1"},
       {:hackney, "~> 1.16"},
-      {:mox, "~> 1.0", only: :test}
+      {:mox, "~> 1.0", only: :test},
+      {:ecto, "~> 3.5"}
     ]
   end
 
