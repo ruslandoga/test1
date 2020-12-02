@@ -1,4 +1,3 @@
-- [ ] setup ci
 - [ ] add api
 
 ```
@@ -17,3 +16,4 @@
 ```
 
 - [ ] deploy api
+- [ ] setup cd
