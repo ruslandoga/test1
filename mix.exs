@@ -34,7 +34,7 @@ defmodule T.MixProject do
   defp deps do
     [
       {:phoenix, "~> 1.5.3"},
-      {:phoenix_live_dashboard, "~> 0.2.0"},
+      {:phoenix_live_dashboard, "~> 0.4.0"},
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
