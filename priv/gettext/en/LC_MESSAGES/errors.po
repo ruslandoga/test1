@@ -9,3 +9,8 @@
 msgid ""
 msgstr ""
 "Language: en\n"
+
+#, elixir-format
+#: lib/t/users/users.ex:24
+msgid "already exists"
+msgstr ""
