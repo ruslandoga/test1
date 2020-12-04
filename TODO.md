@@ -1,8 +1,19 @@
+- [ ] geo search stuff - given a coordinate and a radius, find geohash prefix for searching in the users table
+
+say for user u1 we get 10 geohashes, and 18-30 age filter, then we need to issue 120 parallel requests for the users
+
+and then filter the users `u` who have `u1.age in u.age_filter_min..u.age_filter_max` and `u1.position in u.distance_filter` and `u1.gender == u.gender_filter`
+
+after that we need to get the most likable candidates for `u1` (TODO)
+
+```
+table:
+users:{gender}:{age}:{geohash}:{user_id} -> {age_filter: [min,max], distance_filter: n, gender_filter}
+```
+
 - [ ] add api
 
 ```
-  - users:(user_id,profile) -> {username::string,lat,lon,job,school}
-  - users:filters:(user_id) -> {age_filter_min,gender_filter,gender,age_filter_max,distance_filter}
   - updates:(user_id,timestamp) -> {...}
   - auth:password:(user_id) -> password_hash
   - auth:facebook:(facebook_id) -> token

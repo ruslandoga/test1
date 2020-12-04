@@ -45,7 +45,10 @@ defmodule T.MixProject do
       {:ex_aws_s3, "~> 2.1"},
       {:hackney, "~> 1.16"},
       {:mox, "~> 1.0", only: :test},
-      {:ecto, "~> 3.5"}
+      {:ecto, "~> 3.5"},
+      {:geohash, "~> 1.2"},
+      {:geohax, "~> 0.4.1"},
+      {:geobox, "~> 0.1.0"}
     ]
   end
 

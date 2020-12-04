@@ -34,7 +34,7 @@ defmodule T.DataCase do
 
   using do
     quote do
-      import T.DataCase
+      import T.{DataCase, Fixtures}
     end
   end
 
