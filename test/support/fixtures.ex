@@ -22,7 +22,7 @@ defmodule T.Fixtures do
   end
 
   def filters_fixture(attrs \\ %{}) do
-    %User{} = user = Keyword.fetch!(attrs, :user)
+    %User{} = user = attrs[:user] || raise "need :user"
 
     {:ok, %Filters{} = filters} =
       T.Users.set_filters(user, %{
