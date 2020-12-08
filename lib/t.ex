@@ -25,6 +25,10 @@ defmodule T do
     :persistent_term.put(:usernames_coder, create_usernames_coder(dir))
     :persistent_term.put(:user_search_coder, create_user_search_coder(dir))
     :persistent_term.put(:filters_coder, create_filters_coder(dir))
+    :persistent_term.put(:seen_coder, create_seen_coder(dir))
+    :persistent_term.put(:likes_coder, create_likes_coder(dir))
+    :persistent_term.put(:pass_coder, create_pass_coder(dir))
+    :persistent_term.put(:matches_coder, create_matches_coder(dir))
   end
 
   # used to check if username is taken
@@ -81,6 +85,46 @@ defmodule T do
     Transaction.Coder.new(key, T.Coder.JSON.new())
   end
 
+  defp create_seen_coder(dir) do
+    key =
+      Subspace.concat(
+        Subspace.new(dir),
+        Subspace.new("seen", Coder.Tuple.new({Coder.UUID.new(), Coder.UUID.new()}))
+      )
+
+    Transaction.Coder.new(key)
+  end
+
+  defp create_likes_coder(dir) do
+    key =
+      Subspace.concat(
+        Subspace.new(dir),
+        Subspace.new("likes", Coder.Tuple.new({Coder.UUID.new(), Coder.UUID.new()}))
+      )
+
+    Transaction.Coder.new(key)
+  end
+
+  defp create_pass_coder(dir) do
+    key =
+      Subspace.concat(
+        Subspace.new(dir),
+        Subspace.new("pass", Coder.Tuple.new({Coder.UUID.new(), Coder.UUID.new()}))
+      )
+
+    Transaction.Coder.new(key)
+  end
+
+  defp create_matches_coder(dir) do
+    key =
+      Subspace.concat(
+        Subspace.new(dir),
+        Subspace.new("matches", Coder.Tuple.new({Coder.UUID.new(), Coder.UUID.new()}))
+      )
+
+    Transaction.Coder.new(key)
+  end
+
   def db do
     :persistent_term.get(:fdb)
   end
@@ -99,6 +143,22 @@ defmodule T do
 
   def usernames_coder do
     :persistent_term.get(:usernames_coder)
+  end
+
+  def likes_coder do
+    :persistent_term.get(:likes_coder)
+  end
+
+  def pass_coder do
+    :persistent_term.get(:pass_coder)
+  end
+
+  def matches_coder do
+    :persistent_term.get(:matches_coder)
+  end
+
+  def seen_coder do
+    :persistent_term.get(:seen_coder)
   end
 
   def transact(f) do

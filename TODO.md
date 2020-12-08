@@ -8,21 +8,11 @@ after that we need to get the most likable candidates for `u1` (TODO)
 
 - [ ] last active -> also affects users search
 - [ ] setup demo map with other users and geohash search
-- [ ] finish all of the below
 
 ```
 - [x] users:{gender}:{last_active}:{age}:{geohash}:{user_id} -> {filters}
 - [x] users:{id} -> {username,etc.}
 - [x] filters:{id} -> {age_filter,etc.}
-
-- action_log:{user_id}:{timestamp} -> {action (updated profile, etc.)}
-
-- sessions:{user_id}:{timestamp_logged_in}:{device} -> {}
-
-- auth:password:{user_id} -> password_hash
-- auth:facebook:{facebook_id} -> token
-- auth:instagram:{instagram_id} -> token
-- auth:sms:{phone_number}:{otp_code}
 
 - likes:{from_user_id}:{to_user_id}
 - passes:{from_user_id}:{to_user_id}
@@ -31,10 +21,19 @@ after that we need to get the most likable candidates for `u1` (TODO)
 - matches:{user_id}:{user_id} (one for each user)
 - matches:{user_id}:{user_id}
 
+- messages:{from_user_id}:{to_user_id}:{timestamp} -> {text}
+
+- auth:password:{user_id} -> password_hash
+- auth:facebook:{facebook_id} -> token
+- auth:instagram:{instagram_id} -> token
+- auth:sms:{phone_number}:{otp_code}
+
+- sessions:{user_id}:{timestamp_logged_in}:{device} -> {}
+
+- action_log:{user_id}:{timestamp} -> {action (updated profile, etc.)}
+
 - reports:{user_id}:{timestamp} -> {user_id,cause,text}
 - reports:{timestamp}:{user_id} -> {user_id,cause,text}
-
-- messages:{from_user_id}:{to_user_id}:{timestamp} -> {text}
 ```
 
 - [ ] add web api
