@@ -10,7 +10,7 @@ defmodule T.Users.Search do
 
   ```
   table:
-  users:{gender}:{age}:{geohash}:{user_id} -> {age_filter: [min,max], distance_filter: n, gender_filter}
+  users:{gender}:{last_active}:{age}:{geohash}:{user_id} -> {age_filter: [min,max], distance_filter: n, gender_filter}
   ```
   """
 

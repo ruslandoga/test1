@@ -6,25 +6,37 @@ and then filter the users `u` who have `u1.age in u.age_filter_min..u.age_filter
 
 after that we need to get the most likable candidates for `u1` (TODO)
 
-```
-table:
-users:{gender}:{age}:{geohash}:{user_id} -> {age_filter: [min,max], distance_filter: n, gender_filter}
-```
-
-- [ ] add api
+- [ ] last active -> also affects users search
+- [ ] setup demo map with other users and geohash search
+- [ ] finish all of the below
 
 ```
-  - updates:(user_id,timestamp) -> {...}
-  - auth:password:(user_id) -> password_hash
-  - auth:facebook:(facebook_id) -> token
-  - auth:instagram:(instagram_id) -> token
-  - auth:sms:(phone_number,otp_code)
-  - matches:(user_id,user_id)
-  - reports:(user_id) -> {user_id,cause,text}
-  - likes:(user_id,user_id)
-  - passes:(user_id,user_id)
-  - messages:(from_user_id,to_user_id,timestamp) -> {text,likes}
+- [x] users:{gender}:{last_active}:{age}:{geohash}:{user_id} -> {filters}
+- [x] users:{id} -> {username,etc.}
+- [x] filters:{id} -> {age_filter,etc.}
+
+- action_log:{user_id}:{timestamp} -> {action (updated profile, etc.)}
+
+- sessions:{user_id}:{timestamp_logged_in}:{device} -> {}
+
+- auth:password:{user_id} -> password_hash
+- auth:facebook:{facebook_id} -> token
+- auth:instagram:{instagram_id} -> token
+- auth:sms:{phone_number}:{otp_code}
+
+- likes:{from_user_id}:{to_user_id}
+- passes:{from_user_id}:{to_user_id}
+- seen:{swiper_id}:{swipee_id}
+
+- matches:{user_id}:{user_id} (one for each user)
+- matches:{user_id}:{user_id}
+
+- reports:{user_id}:{timestamp} -> {user_id,cause,text}
+- reports:{timestamp}:{user_id} -> {user_id,cause,text}
+
+- messages:{from_user_id}:{to_user_id}:{timestamp} -> {text}
 ```
 
-- [ ] deploy api
+- [ ] add web api
+- [ ] deploy
 - [ ] setup cd
