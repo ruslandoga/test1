@@ -10,7 +10,7 @@ after that we need to get the most likable candidates for `u1` (TODO)
 - [ ] setup demo map with other users and geohash search
 
 ```
-- [x] users:{gender}:{last_active}:{age}:{geohash}:{user_id} -> {filters}
+- [x] users_search:{gender}:{last_active}:{age}:{geohash}:{user_id} -> {filters}
 - [x] users:{id} -> {username,etc.}
 - [x] filters:{id} -> {age_filter,etc.}
 
